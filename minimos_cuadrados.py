@@ -18,6 +18,6 @@ def minimos_cuadrados(x_puntos, y_puntos, decimal):
 
     m = round(m, decimal)
     c = round(c, decimal)
-    return f"La recta ajustada es: y = {m}x + {c}"
+    return m, c
 
 
