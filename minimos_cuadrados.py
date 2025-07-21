@@ -2,7 +2,7 @@ def minimos_cuadrados(x_puntos, y_puntos, decimal):
     """
     Calcula la recta de ajuste por mínimos cuadrados.
     ENTRADA: x_puntos (lista), y_puntos (lista), decimal (precisión)
-    SALIDA: Un string con la ecuación ajustada y = m·x + c
+    SALIDA: Coeficientes m, c
     """
     N = len(x_puntos)
     sumx = sum(x_puntos)
