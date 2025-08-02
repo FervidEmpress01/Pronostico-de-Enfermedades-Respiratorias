@@ -52,7 +52,6 @@ def spline_cubico_natural_vid(x, y, decimales):
             y_eval.append(yi)
         return np.array(y_eval)
 
-    # Retornamos coeficientes y función
     return {
         'a': a,
         'b': b,
