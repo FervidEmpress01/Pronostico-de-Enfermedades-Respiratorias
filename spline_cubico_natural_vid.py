@@ -2,6 +2,19 @@ import sympy as sp
 import numpy as np
 
 def spline_cubico_natural_vid(x, y, decimales):
+    """
+    Calcula los coeficientes del spline cúbico natural e imprime las funciones por tramo.
+
+    ENTRADA:
+    x (lista): Lista de puntos x (nodos) en orden creciente.
+    y (lista): Lista de valores f(x) correspondientes a los nodos.
+    decimales (int): Número de decimales a los que se redondean los coeficientes al imprimir.
+
+    SALIDA:
+    'a', 'b', 'c', 'd': coeficientes del spline para cada tramo.
+    'x': nodos dados.
+    'evaluar': función para evaluar el spline en uno o varios puntos x.
+    """
     n = len(x) - 1
     h = [x[i+1] - x[i] for i in range(n)]
     alfa = [0] * (n+1)
@@ -35,6 +48,15 @@ def spline_cubico_natural_vid(x, y, decimales):
         print(f"S_{j}(x) = {sp.expand(sx)}")
 
     def evaluar_spline(x_eval):
+        """
+        Evalúa el spline cúbico en uno o varios puntos.
+
+        ENTRADA:
+        x_eval (float o lista): Puntos en los que se desea evaluar el spline.
+
+        SALIDA:
+        Lista con los valores correspondientes f(x_eval) calculados usando los polinomios del spline.
+        """
         y_eval = []
         x_eval = np.atleast_1d(x_eval)
         for xi in x_eval:
